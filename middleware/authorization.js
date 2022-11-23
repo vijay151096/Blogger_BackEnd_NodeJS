@@ -6,8 +6,12 @@ const authorization = asyncHandler( async(req, res, next) => {
     const loggedInUserId = loggedInUser.id
     const loggedInUserRole = loggedInUser.role;
 
-    const reqUserId = req.params.userId || req.body.user
-    const reqUser = User.findById(reqUserId);
+    let reqUserId = req.params.userId || req.body.user
+    if(!reqUserId){
+        reqUserEmail = req.body.email;
+        let reqUser = await User.findOne({email: reqUserEmail})
+        reqUserId = reqUser.id;
+    }
 
     if("admin" !== loggedInUserRole && loggedInUserId !== reqUserId){
         return res.status(403).send({

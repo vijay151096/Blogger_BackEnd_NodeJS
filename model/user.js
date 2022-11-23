@@ -34,8 +34,15 @@ const userSchema = new mongoose.Schema( {
         default: "user"
     },
     phone: String,
-    website: String
-
+    website: String,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    modifiedAt: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 userSchema.pre("save", function(next){
@@ -43,12 +50,12 @@ userSchema.pre("save", function(next){
         const salt = bcrypt.genSaltSync(10)
         this.password = bcrypt.hashSync(this.password, salt)
     }
+    this.modifiedAt = Date.now()
     next();
 })
 
 userSchema.methods.matchPassword = async function(enteredPassword){
     return await bcrypt.compareSync(enteredPassword, this.password)
 }
-
 
 module.exports = mongoose.model("User", userSchema)

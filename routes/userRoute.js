@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require("../model/user")
 const userController = require("../controller/userController")
 const advancedResult = require("../middleware/advancedResult")
+const authorization = require('../middleware/authorization')
+
 
 const blogRouter = require('../routes/blogRoute')
 router.use('/:userId/blog', blogRouter)
@@ -11,8 +13,8 @@ router.route('/')
     .get(advancedResult(User), userController.getUser)
 
 router.route('/:userId')
-    .put(userController.updateUser)
-    .delete(userController.deleteUser)
+    .put(authorization, userController.updateUser)
+    .delete(authorization, userController.deleteUser)
 
 
 module.exports = router;

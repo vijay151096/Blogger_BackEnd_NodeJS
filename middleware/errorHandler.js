@@ -1,5 +1,6 @@
 const errorHandler = async(err, req, res, next) => {
 
+    console.log(`Error has Occurred : ${err} \nHere is the trace ${err.stack}` )
     if(err.name === "CastError"){
         res.status(400).json({
             success: false,

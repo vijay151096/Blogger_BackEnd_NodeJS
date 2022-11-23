@@ -21,12 +21,13 @@ app.use("/data", dataRouter);
 const authenticate = require('./middleware/authenticate')
 app.use(authenticate)
 
+const userRouter = require('./routes/userRoute')
+app.use("/user", userRouter);
+
 //Authorize the User in accessing the resources
 const authorization = require('./middleware/authorization')
 app.use(authorization)
 
-const userRouter = require('./routes/userRoute')
-app.use("/user", userRouter);
 const blogRouter = require('./routes/blogRoute')
 app.use("/blog", blogRouter);
 const commentRouter = require('./routes/commentRoute')

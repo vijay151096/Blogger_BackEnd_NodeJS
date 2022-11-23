@@ -26,6 +26,24 @@ authController.login = asyncHandler(async(req, res, next) => {
 
 })
 
+authController.updateCredentials = asyncHandler(async(req, res, next) => {
+    const reqUser = await User.findOne({email: req.body.email}).select("+password");
+    const isValidUser = await reqUser.matchPassword(req.body.oldPassword)
+    if(!isValidUser){
+        return res.status(401).send({
+            success: false,
+            message: "Invalid Credentials"
+        }).end()
+    }
+    reqUser.password = req.body.password
+    const user = await reqUser.save()
+    res.status(200).send({
+        success: true,
+        message: "User Updated Successfully",
+        data: user
+    })
+})
+
 authController.register = asyncHandler(async(req, res, next) => {
     const users = await User.create(req.body);
     res.status(201).send({
