@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "637daac20939916c9395564e",
+    "user": "637cc39ac0e7bf4f00827b12",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Future",
+    "__v": 0
+  },
+  {
+    "_id": "637daad10939916c93955651",
+    "user": "637cc39ac0e7bf4f00827b12",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Investor",
+    "__v": 0
+  },
+  {
+    "_id": "637daad20939916c93955654",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Customer",
+    "__v": 0
+  },
+  {
+    "_id": "637daad20939916c93955657",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Corporate",
+    "__v": 0
+  },
+  {
+    "_id": "637daad30939916c9395565a",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba7",
+    "rating": 10,
+    "body": "Dynamic",
+    "__v": 0
+  },
+  {
+    "_id": "637daad30939916c9395565d",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Human",
+    "__v": 0
+  },
+  {
+    "_id": "637daad40939916c93955660",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "District",
+    "__v": 0
+  },
+  {
+    "_id": "637daad40939916c93955663",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Corporate",
+    "__v": 0
+  },
+  {
+    "_id": "637daad50939916c93955666",
+    "user": "637cc39bc0e7bf4f00827be9",
+    "blog": "637cc39ac0e7bf4f00827ba9",
+    "rating": 10,
+    "body": "Product",
+    "__v": 0
+  }
+]

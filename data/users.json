@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "637cc39ac0e7bf4f00827b12",
+    "name": "Williamson",
+    "userName": "Eve71",
+    "email": "user1@gmail.com",
+    "password": "password",
+    "role": "user",
+    "phone": "589-444-9349",
+    "website": "http://rita.name",
+    "__v": 0
+  },
+  {
+    "_id": "637cc39ac0e7bf4f00827be9",
+    "name": "Ferry",
+    "userName": "Moses19",
+    "email": "user2@gmail.com",
+    "password": "password",
+    "role": "user",
+    "phone": "803-683-3069",
+    "website": "https://amalia.net",
+    "__v": 0
+  },
+  {
+    "_id": "637cc39ac0e7bf4f00827b67",
+    "name": "Stark",
+    "userName": "Ben.Skilej",
+    "email": "admin@gmail.com",
+    "password": "password",
+    "role": "admin",
+    "phone": "481-884-1126",
+    "website": "https://precious.com",
+    "__v": 0
+  },
+  {
+    "_id": "637cc39bc0e7bf4f20827be9",
+    "name": "Bruen",
+    "userName": "Roscoe_Kohler51",
+    "email": "Briana_Gutmann51@example.com",
+    "password": "password",
+    "role": "user",
+    "phone": "933-885-9209",
+    "website": "https://johann.org",
+    "__v": 0
+  },
+  {
+    "_id": "637cc39bc0e7bf4f00827be9",
+    "name": "Armstrong",
+    "userName": "Stefanie_Runte24",
+    "email": "Norbert.Greenholt361@example.net",
+    "password": "password",
+    "role": "user",
+    "phone": "902-962-4526",
+    "website": "http://jordan.org",
+    "__v": 0
+  }
+]
