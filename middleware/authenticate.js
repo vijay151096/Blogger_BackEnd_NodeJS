@@ -5,6 +5,12 @@ const User = require('../model/user')
 const asyncHandler = require('../middleware/asyncHandler')
 
 const authenticate = asyncHandler(async(req, res, next) => {
+
+    console.log(`\nPath Url : ${req.path} `)
+    console.log(`\nReq Query : ${req.query} `)
+    console.log(`\nReq Params : ${req.params} `)
+    console.log(`\nReq Body : ${req.body} `)
+
     if(!req.headers.authorization || !req.headers.authorization.startsWith("Bearer")){
         return res.status(401).send({
             success: false,
