@@ -42,9 +42,9 @@ app.use("/comment", commentRouter);
 //handle all Error in handler through middleware
 app.use(errorHandler)
 
-let SERVER_PORT  = process.env.SERVER_PORT || 5000;
-app.listen(SERVER_PORT, () => {
-    console.log(`Application Started Successfully on Port : ${SERVER_PORT}`)
+let PORT  = process.env.PORT || 9005;
+app.listen(PORT, () => {
+    console.log(`Application Started Successfully on Port : ${PORT}`)
 });
 
 
