@@ -6,10 +6,10 @@ const asyncHandler = require('../middleware/asyncHandler')
 
 const authenticate = asyncHandler(async(req, res, next) => {
 
-    console.log(`\nPath Url : ${req.path} `)
-    console.log(`\nReq Query : ${req.query} `)
-    console.log(`\nReq Params : ${req.params} `)
-    console.log(`\nReq Body : ${req.body} `)
+    // console.log(`\nPath Url : ${req.path} `)
+    // console.log(`\nReq Query : ${JSON.parse(req.query)} `)
+    // console.log(`\nReq Params : ${JSON.parse(req.params)} `)
+    // console.log(`\nReq Body : ${JSON.parse(req.body.toString())} `)
 
     if(!req.headers.authorization || !req.headers.authorization.startsWith("Bearer")){
         return res.status(401).send({

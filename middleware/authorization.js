@@ -2,12 +2,17 @@ const asyncHandler = require('./asyncHandler')
 const User = require('../model/user')
 const authorization = asyncHandler( async(req, res, next) => {
 
+    if( req.method === 'GET') {
+        return next()
+    }
+
     const loggedInUser = req.loggedInUser;
     const loggedInUserId = loggedInUser.id
     const loggedInUserRole = loggedInUser.role;
 
     let reqUserId = req.params.userId || req.body.user
-    if(!reqUserId){
+    let reqUserEmail;
+    if (!reqUserId) {
         reqUserEmail = req.body.email;
         let reqUser = await User.findOne({email: reqUserEmail})
         reqUserId = reqUser.id;
