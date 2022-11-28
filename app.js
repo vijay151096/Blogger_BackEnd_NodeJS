@@ -1,6 +1,7 @@
 const express = require('express');
 const mongooseConnect = require('./dbconnect/connect')
 const errorHandler = require('./middleware/errorHandler')
+const cors = require('cors')
 
 const dotenv = require('dotenv')
 dotenv.config({path: './config/config.env'})
@@ -10,6 +11,10 @@ dotenv.config({path: './config/config.env'})
 const app = express();
 app.use(express.json())
 mongooseConnect();
+
+const corsOpts = require("./middleware/corsResponseHandler")
+app.use(cors(corsOpts))
+
 
 //Route all the Endpoints
 const authRouter = require('./routes/authRoute')
@@ -37,7 +42,7 @@ app.use("/comment", commentRouter);
 //handle all Error in handler through middleware
 app.use(errorHandler)
 
-let SERVER_PORT  = process.env.SERVER_PORT;
+let SERVER_PORT  = process.env.SERVER_PORT || 5000;
 app.listen(SERVER_PORT, () => {
     console.log(`Application Started Successfully on Port : ${SERVER_PORT}`)
 });
