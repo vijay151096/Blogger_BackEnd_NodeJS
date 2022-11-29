@@ -14,8 +14,14 @@ const authorization = asyncHandler( async(req, res, next) => {
     let reqUserEmail;
     if (!reqUserId) {
         reqUserEmail = req.body.email;
+        if( !reqUserEmail ) {
+            return next()
+        }
         let reqUser = await User.findOne({email: reqUserEmail})
         reqUserId = reqUser.id;
+    }
+    if( !reqUserId ) {
+        return next()
     }
 
     if("admin" !== loggedInUserRole && loggedInUserId !== reqUserId){

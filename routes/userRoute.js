@@ -13,7 +13,7 @@ router.route('/')
     .get(advancedResult(User), userController.getUser)
 
 router.route('/:userId')
-    .put(authorization, userController.updateUser)
+    .put( userController.updateUser)
     .delete(authorization, userController.deleteUser)
     .get(userController.getUserById)
 
