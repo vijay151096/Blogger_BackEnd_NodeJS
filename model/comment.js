@@ -20,6 +20,14 @@ const commentSchema = new mongoose.Schema({
         maxLength: [500, "body Should not be more than 500 chars"],
         minLength: [5, "body should have atleast 5 chars"],
         required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    modifiedAt: {
+        type: Date,
+        default: Date.now
     }
 
 })

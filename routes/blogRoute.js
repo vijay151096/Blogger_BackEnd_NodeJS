@@ -2,6 +2,7 @@ const express = require("express")
 const advancedResult = require("../middleware/advancedResult");
 const filterUsersResult = require("../middleware/filterUsersResult")
 const Blog = require("../model/blog");
+const User = require('../model/user')
 const blogController = require("../controller/blogController");
 const router = express.Router({mergeParams: true});
 
@@ -13,7 +14,7 @@ router.route('/')
     .get(filterUsersResult, blogController.getBlog)
 
 router.route("/search")
-    .get(advancedResult(Blog), blogController.searchBlog)
+    .get(advancedResult(Blog, 'user'), blogController.searchBlog)
 
 router.route('/:blogId')
     .put(filterUsersResult, blogController.updateBlog)

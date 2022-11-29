@@ -15,6 +15,7 @@ router.route('/')
 router.route('/:userId')
     .put(authorization, userController.updateUser)
     .delete(authorization, userController.deleteUser)
+    .get(userController.getUserById)
 
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const advancedResult = (model) => async(req, res, next) => {
+const advancedResult = (model, populate) => async(req, res, next) => {
 
     const queryParam = { ...req.query };
     let query = model.find(queryParam)
@@ -13,12 +13,16 @@ const advancedResult = (model) => async(req, res, next) => {
         query.select(req.query.select.replaceAll(",", " "))
     }
 
+    if(populate){
+        query.populate(populate)
+    }
+
     if(req.query.sort){
         query.sort(req.query.sort.replaceAll(",", " "))
     }
 console.log(req.query)
     let page = req.query.page || 1
-    let limit = req.query.limit || 5
+    let limit = req.query.limit || 100
     let skip = (page - 1) * limit
     query.skip(skip).limit(limit)
     let pagination = {

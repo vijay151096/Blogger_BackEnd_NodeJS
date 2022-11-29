@@ -19,6 +19,15 @@ userController.updateUser = asyncHandler(async(req, res, next) => {
     })
 })
 
+userController.getUserById = asyncHandler(async(req, res, next) => {
+    const users = await User.findById(req.params.userId)
+    res.status(200).send({
+        success: true,
+        message: "User Details",
+        data: users
+    })
+})
+
 userController.deleteUser = asyncHandler(async(req, res, next) => {
     await User.findByIdAndDelete(req.params.userId)
     res.status(200).send({

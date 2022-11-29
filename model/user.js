@@ -35,6 +35,10 @@ const userSchema = new mongoose.Schema( {
     },
     phone: String,
     website: String,
+    followers: {
+        type: Number,
+        default: 0
+    },
     createdAt: {
         type: Date,
         default: Date.now
