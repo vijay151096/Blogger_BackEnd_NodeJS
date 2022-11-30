@@ -6,6 +6,9 @@ const userController = [];
 userController.getUser = asyncHandler(async(req, res, next) => {
     res.status(200).json(res.advancedResult)
 })
+userController.getCurrentUser = asyncHandler(async (req, res, next) => {
+    res.status(200).json(req.loggedInUser)
+})
 
 userController.updateUser = asyncHandler(async(req, res, next) => {
     const users = await User.findByIdAndUpdate(req.params.userId, req.body, {

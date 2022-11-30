@@ -1,6 +1,6 @@
 const corsOpts = {
-    origin: '*',
-
+    origin: 'http://localhost:3000',
+    credentials: true,
     methods: [
         'GET',
         'POST',
@@ -10,7 +10,8 @@ const corsOpts = {
 
     allowedHeaders: [
         'Content-Type',
-        "Authorization"
+        "Authorization",
+        "set-coookie"
     ],
 };
 

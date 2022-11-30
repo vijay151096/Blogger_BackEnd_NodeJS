@@ -9,12 +9,15 @@ authController.login = asyncHandler(async(req, res, next) => {
     const loggedInUser = await User.findOne({email: req.body.email}).select("+password");
     let isValidUser = await loggedInUser.matchPassword(req.body.password);
     if(isValidUser){
-        res.status(200).send({
+        const userToken = await authController.generateJWTToken(loggedInUser.id)
+        res.cookie('token', userToken)
+            .status(200)
+            .send({
             success: true,
             message: "Logged In Successfully",
             data: {
                 id: loggedInUser.id,
-                token: await authController.generateJWTToken(loggedInUser.id)
+                token: userToken
             }
         })
     } else {
@@ -37,6 +40,8 @@ authController.updateCredentials = asyncHandler(async(req, res, next) => {
     }
     reqUser.password = req.body.password
     const user = await reqUser.save()
+    const userToken = await authController.generateJWTToken(users.id);
+    res.cookie('token', userToken)
     res.status(200).send({
         success: true,
         message: "User Updated Successfully",
@@ -46,12 +51,14 @@ authController.updateCredentials = asyncHandler(async(req, res, next) => {
 
 authController.register = asyncHandler(async(req, res, next) => {
     const users = await User.create(req.body);
+    const userToken = await authController.generateJWTToken(users.id);
+    res.cookie('token', userToken)
     res.status(201).send({
         success: true,
         message: "User Registered Successfully",
         data: {
             id: users.id,
-            token: await authController.generateJWTToken(users.id)
+            token: userToken
         }
     })
 })

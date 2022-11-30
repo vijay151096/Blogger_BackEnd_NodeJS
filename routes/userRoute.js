@@ -12,6 +12,11 @@ router.use('/:userId/blog', blogRouter)
 router.route('/')
     .get(advancedResult(User), userController.getUser)
 
+// Authenticate all below endpoints
+const authenticate = require('../middleware/authenticate')
+router.route("/me")
+    .get(authenticate, userController.getCurrentUser)
+
 router.route('/:userId')
     .put( userController.updateUser)
     .delete(authorization, userController.deleteUser)

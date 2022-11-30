@@ -9,6 +9,10 @@ dotenv.config({path: './config/config.env'})
 
 //Connect DB and Start the Framework
 const app = express();
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 app.use(express.json())
 mongooseConnect();
 
