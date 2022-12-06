@@ -13,7 +13,7 @@ The Application Will be Hosted in PORT : 9005
 * Pull the Images from docker hub
   * `docker pull vijaykumar151096/blogger_backend`
 * Run the Docker using Below Command
-  * `docker run -d -p 9005:9005 --name blogger_backend blogger_backend`
+  * `docker run -d -p 9005:9005 --name blogger_backend vijaykumar151096/blogger_backend`
 * To Stop 
   * `docker stop blogger_backend`
 * To Start 
