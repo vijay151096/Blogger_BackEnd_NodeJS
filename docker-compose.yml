@@ -1,0 +1,10 @@
+version: "3"
+services:
+  blogger_backend:
+    image: vijaykumar151096/blogger_backend
+    ports:
+      - 9005:9005
+  blogger_frontend:
+    image: vijaykumar151096/blogger_frontend
+    ports:
+      - 3000:3000

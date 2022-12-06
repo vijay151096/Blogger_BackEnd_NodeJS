@@ -34,3 +34,12 @@ The Application Will be Hosted in PORT : 9005
 * The Application is in Maintanence Mode.
 * Turn off the maintanence Mode to use it from Heroku.
 
+### To Run The Application using docker-compose as both front-end and back-end
+
+* Run the Following docker-compose command to Start
+  * `docker-compose -f docker-compose.yml up -d`
+* Run the Following docker-compose command to Stop
+  * `docker-compose -f docker-compose.yml down`
+
+
+
